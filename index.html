@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amritprada Exports Pvt. Ltd. | Trusted Surgical Disposables Supplier</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #1a1a1a; line-height: 1.6; }
+
+    :root {
+      --primary: #0d6efd;
+      --primary-light: #e8f2ff;
+      --accent: #0b2447;
+      --soft: #f7f9fc;
+      --border: #e5e7eb;
+      --success: #28a745;
+    }
+
+    .trust-shadow { box-shadow: 0 16px 40px rgba(13,110,253,.12); }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+    /* Header */
+    header { background: var(--primary); color: #fff; position: sticky; top: 0; z-index: 1000; }
+    .nav { display: flex; align-items: center; justify-content: space-between; padding: 12px 0; }
+    .logo { display: flex; align-items: center; font-size: 20px; font-weight: 700; letter-spacing: .3px; }
+    .logo img { 
+      height: 50px; 
+      width: auto; 
+      max-width: 200px; 
+      margin-right: 12px;
+      object-fit: contain;
+    }
+    .logo a { display: flex; align-items: center; text-decoration: none; color: white; }
+    .logo span { font-size: 18px; }
+    nav a { color: #fff; text-decoration: none; margin-left: 22px; font-size: 15px; font-weight: 500; opacity: .95; transition: opacity 0.2s; }
+    nav a:hover { opacity: 1; text-decoration: underline; }
+    .mobile-menu { display: none; font-size: 1.5rem; cursor: pointer; }
+
+    /* Hero */
+    .hero { background: linear-gradient(90deg, var(--primary-light), #f7fbff); padding: 70px 0; }
+    .hero-grid { display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center; }
+    @media (min-width: 900px) { .hero-grid { grid-template-columns: 1.2fr .8fr; } }
+    .hero h1 { font-size: 38px; margin: 0 0 16px; color: var(--accent); line-height: 1.2; }
+    .hero p { font-size: 16px; line-height: 1.7; margin-bottom: 22px; color: #333; }
+    .cert-badges { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0 25px; }
+    .badge { border: 1px solid #cfe2ff; background: #fff; border-radius: 50px; padding: 8px 18px; font-size: 13px; font-weight: 700; color: var(--accent); }
+    .btn-primary { display: inline-block; padding: 14px 28px; border-radius: 50px; background: var(--primary); color: #fff; text-decoration: none; font-size: 15px; font-weight: 700; box-shadow: 0 10px 28px rgba(13,110,253,.28); transition: all 0.3s; }
+    .btn-primary:hover { background: #0b5ed7; transform: translateY(-2px); }
+
+    /* Sections */
+    .section { padding: 70px 0; }
+    .section h2 { font-size: 32px; margin-bottom: 40px; text-align: center; color: var(--accent); }
+    .grid { display: grid; gap: 25px; }
+    @media (min-width: 900px) { .grid-3 { grid-template-columns: repeat(3, 1fr); } }
+    .card { border: 1px solid var(--border); border-radius: 18px; padding: 24px; background: #fff; box-shadow: 0 10px 25px rgba(0,0,0,.04); transition: transform 0.3s, box-shadow 0.3s; }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,.08); }
+    .card h3 { margin: 15px 0 10px; font-size: 18px; color: var(--accent); }
+    .card p { font-size: 15px; line-height: 1.6; color: #555; }
+    .card img { 
+      border-radius: 14px; 
+      width: 100%; 
+      height: 200px; 
+      object-fit: cover;
+      background-color: #f8fafc;
+      padding: 10px;
+      border: 1px solid #e5e7eb;
+    }
+
+    /* Product-specific image adjustments */
+    .product-img { background-color: #f8fafc; }
+
+    /* Why Choose Us */
+    .why { background: #f2f6ff; }
+    .why .card { text-align: center; }
+    .why .card i { font-size: 36px; color: var(--primary); margin-bottom: 15px; }
+
+    /* About */
+    .about p { max-width: 800px; margin: 0 auto; font-size: 17px; line-height: 1.8; text-align: center; color: #444; }
+
+    /* Contact */
+    .contact { background: var(--soft); }
+    .contact form { max-width: 700px; margin: 0 auto; }
+    label { font-size: 14px; font-weight: 600; display: block; margin: 15px 0 8px; color: #333; }
+    input, textarea { width: 100%; padding: 14px; border-radius: 12px; border: 1px solid #d1d5db; font-size: 15px; font-family: inherit; }
+    textarea { min-height: 140px; resize: vertical; }
+    .btn-submit { margin-top: 20px; background: var(--primary); color: #fff; padding: 14px 24px; border-radius: 12px; border: none; cursor: pointer; font-weight: 700; font-size: 16px; width: 100%; transition: background 0.3s; }
+    .btn-submit:hover { background: #0b5ed7; }
+
+    /* Trust Promises */
+    .trust-promises { background: #fff; border-top: 1px solid var(--border); }
+
+    /* Export Countries */
+    .countries { background: #f8fafc; }
+    .country-badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 25px; }
+    .country-badge { background: white; border-radius: 12px; padding: 10px 20px; box-shadow: 0 4px 12px rgba(0,0,0,.05); font-weight: 600; }
+
+    /* Footer */
+    footer { background: var(--accent); color: #e5ecff; padding: 40px 0 20px; }
+    footer .cols { display: grid; gap: 30px; }
+    @media (min-width: 900px) { footer .cols { grid-template-columns: repeat(3,1fr); } }
+    footer a { color: #e5ecff; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    footer strong { font-size: 18px; }
+    .footer-bottom { text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.1); font-size: 13px; opacity: .8; }
+
+    /* WhatsApp Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background-color: #25D366;
+      color: #fff;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    .whatsapp-float:hover {
+      background-color: #128C7E;
+      transform: scale(1.1);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav { 
+        display: none; 
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--primary);
+        padding: 20px;
+        box-shadow: 0 10px 20px rgba(0,0,0,.1);
+      }
+      nav a { margin: 10px 0; }
+      .mobile-menu { display: block; }
+      .hero h1 { font-size: 30px; }
+      .section h2 { font-size: 28px; }
+      .card { padding: 20px; }
+      .logo img { height: 40px; }
+      .logo span { font-size: 16px; }
+      .card img { height: 160px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <div class="logo">
+        <a href="#home">
+          <img src="https://drive.google.com/uc?export=view&id=10aNcJFumXrWoIedj3o2GHSS0twwcHlko" alt="Amritprada Exports Logo" />
+          <span>Amritprada Exports</span>
+        </a>
+      </div>
+      <div class="mobile-menu"><i class="fas fa-bars"></i></div>
+      <nav>
+        <a href="#home"><i class="fas fa-home"></i> Home</a>
+        <a href="#products"><i class="fas fa-box-open"></i> Products</a>
+        <a href="#about"><i class="fas fa-info-circle"></i> About</a>
+        <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="container hero-grid">
+      <div>
+        <h1>Your Trusted Global Partner for Surgical & Medical Disposables</h1>
+        <p>
+          We are the leading provider of high‑quality, reliable surgical disposable products from India. We deliver our products worldwide, ensuring globally recognized certifications such as ISO 13485, ISO 9001, GMP/WHO‑GMP, CE (where applicable), CDSCO India compliance, and validated sterilization processes (ETO/Gamma).
+        </p>
+        <div class="cert-badges">
+          <span class="badge">ISO 13485</span>
+          <span class="badge">ISO 9001</span>
+          <span class="badge">GMP / WHO‑GMP</span>
+          <span class="badge">CE Certified</span>
+          <span class="badge">CDSCO India</span>
+        </div>
+        <a class="btn-primary" href="#contact"><i class="fas fa-file-alt"></i> Get a Quote</a>
+      </div>
+      <div class="trust-shadow">
+        <img src="https://images.unsplash.com/photo-1586773860418-dc22f8b874bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Sterile Medical Products" style="border-radius: 18px; width:100%;" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section id="products" class="section">
+    <div class="container">
+      <h2>Our Product Range</h2>
+      <div class="grid grid-3">
+        <div class="card">
+          <img src="https://images.pexels.com/photos/4386466/pexels-photo-4386466.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" alt="Disposable Syringes" class="product-img" />
+          <h3>Disposable Hypodermic Syringes</h3>
+          <p>Hypodermic, auto-disable, re‑use prevention, insulin, feeding & catheter tip syringes. Sterile EO/Gamma.</p>
+        </div>
+        <div class="card">
+          <img src="https://images.pexels.com/photos/5726706/pexels-photo-5726706.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" alt="Hypodermic Needles" class="product-img" />
+          <h3>Hypodermic Needles</h3>
+          <p>Standard, safety, veterinary, blunt, pen & Huber needles. Various gauges available.</p>
+        </div>
+        <div class="card">
+          <img src="https://images.pexels.com/photos/5726708/pexels-photo-5726708.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" alt="Anesthesia Products" class="product-img" />
+          <h3>Anesthesia Products</h3>
+          <p>Spinal needles, epidural needles & complete epidural kits. Medical grade quality.</p>
+        </div>
+        <div class="card">
+          <img src="https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" alt="Infusion Sets" class="product-img" />
+          <h3>Infusion & Transfusion</h3>
+          <p>Infusion sets, IV flow regulators, micro drip, burette & blood administration sets.</p>
+        </div>
+        <div class="card">
+          <img src="https://images.pexels.com/photos/4386474/pexels-photo-4386474.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" alt="IV Cannula" class="product-img" />
+          <h3>IV Cannula & Scalp Vein</h3>
+          <p>IV cannulas and butterfly scalp vein sets. Various sizes available with safety features.</p>
+        </div>
+        <div class="card">
+          <img src="https://images.pexels.com/photos/4386478/pexels-photo-4386478.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" alt="Three Way Stopcocks" class="product-img" />
+          <h3>Three Way Stopcocks</h3>
+          <p>3‑way stopcocks & extension tubes. Medical grade polycarbonate construction.</p>
+        </div>
+        <div class="card">
+          <img src="https://images.pexels.com/photos/5726710/pexels-photo-5726710.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" alt="Veterinary Products" class="product-img" />
+          <h3>Veterinary Products</h3>
+          <p>Endotracheal, ryles, tracheostomy tubes & veterinary scalpels.</p>
+        </div>
+        <div class="card">
+          <img src="https://images.pexels.com/photos/4386479/pexels-photo-4386479.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" alt="Biopsy Products" class="product-img" />
+          <h3>Biopsy Products</h3>
+          <p>Aspiration, automatic & full‑core biopsy needles and instruments.</p>
+        </div>
+        <div class="card">
+          <img src="https://images.pexels.com/photos/4386469/pexels-photo-4386469.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" alt="Respiratory Products" class="product-img" />
+          <h3>Respiratory Products</h3>
+          <p>Oxygen masks, nasal cannula, nebulizing masks & accessories.</p>
+        </div>
+        <div class="card">
+          <img src="https://images.pexels.com/photos/4386470/pexels-photo-4386470.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" alt="Miscellaneous Products" class="product-img" />
+          <h3>Miscellaneous Products</h3>
+          <p>Umbilical cord clamps, blood lancets & urine collection bags.</p>
+        </div>
+        <div class="card">
+          <img src="https://images.pexels.com/photos/5726712/pexels-photo-5726712.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" alt="Surgical Gloves" class="product-img" />
+          <h3>Surgical Gloves</h3>
+          <p>Sterile surgical gloves, examination gloves in various sizes.</p>
+        </div>
+        <div class="card">
+          <img src="https://images.pexels.com/photos/5726714/pexels-photo-5726714.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" alt="Personal Protection" class="product-img" />
+          <h3>Personal Protection</h3>
+          <p>Surgical masks, face shields, gowns & other PPE items.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="section why">
+    <div class="container">
+      <h2>Why Buyers Trust Amritprada</h2>
+      <div class="grid grid-3">
+        <div class="card">
+          <i class="fas fa-user-check"></i>
+          <h3>Verified & Compliant Manufacturers</h3>
+          <p>We partner only with audited suppliers following international quality practices and regulatory controls.</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-file-contract"></i>
+          <h3>Clear Documentation</h3>
+          <p>Complete product test reports, sterilization records, and certificates provided with every shipment.</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-shipping-fast"></i>
+          <h3>Reliable Supply & Packaging</h3>
+          <p>Export‑ready cartons, protective packing, and consistent availability for long‑term orders.</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-handshake"></i>
+          <h3>Competitive & Honest Pricing</h3>
+          <p>No hidden charges — transparent quotations and fair margins for distributors.</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-clipboard-check"></i>
+          <h3>Quality Assurance</h3>
+          <p>Rigorous quality checks at every stage — from manufacturing to final packaging.</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-headset"></i>
+          <h3>End‑to‑End Support</h3>
+          <p>From product selection to shipping documentation — we assist at every step.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Export Countries -->
+  <section class="section countries">
+    <div class="container">
+      <h2>We Export Worldwide</h2>
+      <p style="text-align: center; max-width: 800px; margin: 0 auto 30px; color: #555;">
+        Serving trusted buyers across Africa, Middle East, Asia, Europe & Latin America.
+      </p>
+      <div class="country-badges">
+        <span class="country-badge">🇮🇳 India</span>
+        <span class="country-badge">🇦🇪 UAE</span>
+        <span class="country-badge">🇸🇦 Saudi Arabia</span>
+        <span class="country-badge">🇳🇬 Nigeria</span>
+        <span class="country-badge">🇰🇪 Kenya</span>
+        <span class="country-badge">🇿🇦 South Africa</span>
+        <span class="country-badge">🇪🇹 Ethiopia</span>
+        <span class="country-badge">🇹🇿 Tanzania</span>
+        <span class="country-badge">🇺🇬 Uganda</span>
+        <span class="country-badge">🇬🇭 Ghana</span>
+        <span class="country-badge">🌍 And More...</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section about">
+    <div class="container">
+      <h2>About Amritprada Exports</h2>
+      <p>
+        Built on reliability and transparency, Amritprada Exports focuses on delivering safe, compliant, and value‑driven medical disposables. Buyers choose us because working with us feels simple, clear, and risk‑free.
+        <br><br>
+        Every order is handled carefully — product matching, packaging checks, and documentation support — so buyers feel confident before, during, and after shipment.
+      </p>
+    </div>
+  </section>
+
+  <!-- Trust Promises -->
+  <section class="section trust-promises">
+    <div class="container">
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>Money‑Safe Approach</h3>
+          <p>Clear quotations, documented confirmations, and step‑by‑step coordination reduce risk for buyers.</p>
+        </div>
+        <div class="card">
+          <h3>Consistency & Repeatability</h3>
+          <p>Batches monitored for packaging, labeling, and specifications — so re‑orders remain uniform.</p>
+        </div>
+        <div class="card">
+          <h3>Long‑Term Partnership</h3>
+          <p>Our goal is not one shipment — it is building trust and steady business growth together.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section contact">
+    <div class="container">
+      <h2>Request a Quote</h2>
+      <form action="https://formsubmit.co/amritprada@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="New Quote Request - Amritprada Exports Website">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        
+        <label>Your Name *</label>
+        <input type="text" name="name" placeholder="Enter your full name" required />
+        
+        <label>Email Address *</label>
+        <input type="email" name="email" placeholder="Enter your business email" required />
+        
+        <label>Company Name</label>
+        <input type="text" name="company" placeholder="Your company name" />
+        
+        <label>Country</label>
+        <input type="text" name="country" placeholder="Your country" />
+        
+        <label>Products Required *</label>
+        <textarea name="message" placeholder="Please list the products, quantities, and any specific requirements..." required></textarea>
+        
+        <p style="font-size:15px; margin-top:15px; padding: 15px; background: var(--primary-light); border-radius: 10px;">
+          <i class="fas fa-envelope"></i> <strong>Email:</strong> amritprada@gmail.com<br>
+          <i class="fas fa-phone"></i> <strong>Phone/WhatsApp:</strong> +91-9460426703<br>
+          <i class="fas fa-clock"></i> <strong>Response Time:</strong> Within 24 hours
+        </p>
+        
+        <button class="btn-submit" type="submit"><i class="fas fa-paper-plane"></i> Submit Quote Request</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container cols">
+      <div>
+        <strong>Amritprada Exports Pvt. Ltd.</strong><br />
+        Trusted Global Partner for Surgical & Medical Disposables<br><br>
+        <i class="fas fa-map-marker-alt"></i> Registered in India<br />
+        <i class="fas fa-globe"></i> Exporting Worldwide
+      </div>
+      <div>
+        <strong>Quick Links</strong><br>
+        <div><a href="#home">Home</a></div>
+        <div><a href="#products">Products</a></div>
+        <div><a href="#about">About</a></div>
+        <div><a href="#contact">Contact</a></div>
+      </div>
+      <div>
+        <strong>Contact Info</strong><br>
+        <i class="fas fa-envelope"></i> amritprada@gmail.com<br>
+        <i class="fas fa-phone"></i> +91-9460426703<br>
+        <i class="fab fa-whatsapp"></i> +91-9460426703
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 Amritprada Exports Pvt. Ltd. — All Rights Reserved<br>
+      ISO 13485 | ISO 9001 | GMP/WHO-GMP | CE Certified | CDSCO India
+    </div>
+  </footer>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/919460426703?text=Hi%20Amritprada%20Exports,%20I%20would%20like%20to%20inquire%20about%20your%20products." target="_blank" class="whatsapp-float">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script>
+    // Mobile menu toggle
+    document.querySelector('.mobile-menu').addEventListener('click', function() {
+      const nav = document.querySelector('nav');
+      if (nav.style.display === 'flex') {
+        nav.style.display = 'none';
+      } else {
+        nav.style.display = 'flex';
+      }
+    });
+
+    // Close mobile menu when clicking a link
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
+          document.querySelector('nav').style.display = 'none';
+        }
+      });
+    });
+
+    // Update nav display on window resize
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > 768) {
+        document.querySelector('nav').style.display = '';
+      } else {
+        document.querySelector('nav').style.display = 'none';
+      }
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        if(targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if(targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Image fallback system
+    document.addEventListener('DOMContentLoaded', function() {
+      const productImages = document.querySelectorAll('.card img');
+      const placeholderBase = 'https://placehold.co/600x400/0d6efd/ffffff?text=';
+      const productTexts = [
+        'Syringes',
+        'Needles', 
+        'Anesthesia',
+        'Infusion Sets',
+        'IV Cannula',
+        'Stopcocks',
+        'Veterinary',
+        'Biopsy',
+        'Respiratory',
+        'Miscellaneous',
+        'Surgical Gloves',
+        'PPE'
+      ];
+      
+      productImages.forEach((img, index) => {
+        // Add error handler
+        img.onerror = function() {
+          const text = productTexts[index] || 'Medical Product';
+          this.src = `${placeholderBase}${text}`;
+          this.alt = `${text} - Product Image`;
+        };
+        
+        // Also check if image loaded properly after 2 seconds
+        setTimeout(() => {
+          if (img.naturalHeight === 0) {
+            const text = productTexts[index] || 'Medical Product';
+            img.src = `${placeholderBase}${text}`;
+            img.alt = `${text} - Product Image`;
+          }
+        }, 2000);
+      });
+    });
+  </script>
+</body>
+</html>
