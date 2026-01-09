@@ -2,12 +2,25 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- ✅ ADD THIS FOR BETTER MOBILE SUPPORT -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <meta name="format-detection" content="telephone=no">
   <title>Amritprada Exports Pvt. Ltd. | Trusted Surgical Disposables Supplier</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- ✅ GOOGLE FONT FOR BETTER TEXT -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  
   <style>
-    * { box-sizing: border-box; }
-    body { margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #1a1a1a; line-height: 1.6; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body { 
+      font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+      color: #1a1a1a; 
+      line-height: 1.6;
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+    }
 
     :root {
       --primary: #0d6efd;
@@ -16,141 +29,616 @@
       --soft: #f7f9fc;
       --border: #e5e7eb;
       --success: #28a745;
+      --shadow: 0 10px 30px rgba(13, 110, 253, 0.08);
     }
 
     .trust-shadow { box-shadow: 0 16px 40px rgba(13,110,253,.12); }
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+    .container { 
+      max-width: 1200px; 
+      margin: 0 auto; 
+      padding: 0 20px;
+      width: 100%;
+    }
 
-    /* Header */
-    header { background: var(--primary); color: #fff; position: sticky; top: 0; z-index: 1000; }
-    .nav { display: flex; align-items: center; justify-content: space-between; padding: 12px 0; }
-    .logo { display: flex; align-items: center; font-size: 20px; font-weight: 700; letter-spacing: .3px; }
+    /* ===== HEADER ===== */
+    header { 
+      background: var(--primary); 
+      color: #fff; 
+      position: sticky; 
+      top: 0; 
+      z-index: 1000;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      width: 100%;
+    }
+    
+    .nav { 
+      display: flex; 
+      align-items: center; 
+      justify-content: space-between; 
+      padding: 15px 0;
+      width: 100%;
+    }
+    
+    .logo { 
+      display: flex; 
+      align-items: center; 
+      font-weight: 700; 
+      letter-spacing: .3px; 
+      flex-shrink: 0;
+    }
+    
     .logo img { 
-      height: 50px; 
+      height: 55px; 
       width: auto; 
-      max-width: 200px; 
+      max-width: 220px;
       margin-right: 12px;
       object-fit: contain;
+      display: block;
     }
-    .logo a { display: flex; align-items: center; text-decoration: none; color: white; }
-    .logo span { font-size: 18px; }
-    nav a { color: #fff; text-decoration: none; margin-left: 22px; font-size: 15px; font-weight: 500; opacity: .95; transition: opacity 0.2s; }
-    nav a:hover { opacity: 1; text-decoration: underline; }
-    .mobile-menu { display: none; font-size: 1.5rem; cursor: pointer; }
+    
+    .logo a { 
+      display: flex; 
+      align-items: center; 
+      text-decoration: none; 
+      color: white; 
+      flex-wrap: nowrap;
+    }
+    
+    .logo span { 
+      font-size: 18px; 
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+    }
+    
+    nav { 
+      display: flex; 
+      align-items: center;
+      gap: 25px;
+    }
+    
+    nav a { 
+      color: #fff; 
+      text-decoration: none; 
+      font-size: 15px; 
+      font-weight: 500; 
+      opacity: .95; 
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    
+    nav a:hover { 
+      opacity: 1; 
+      transform: translateY(-1px);
+    }
+    
+    .mobile-menu { 
+      display: none; 
+      font-size: 1.5rem; 
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: white;
+      padding: 5px;
+    }
 
-    /* Hero */
-    .hero { background: linear-gradient(90deg, var(--primary-light), #f7fbff); padding: 70px 0; }
-    .hero-grid { display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center; }
-    @media (min-width: 900px) { .hero-grid { grid-template-columns: 1.2fr .8fr; } }
-    .hero h1 { font-size: 38px; margin: 0 0 16px; color: var(--accent); line-height: 1.2; }
-    .hero p { font-size: 16px; line-height: 1.7; margin-bottom: 22px; color: #333; }
-    .cert-badges { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0 25px; }
-    .badge { border: 1px solid #cfe2ff; background: #fff; border-radius: 50px; padding: 8px 18px; font-size: 13px; font-weight: 700; color: var(--accent); }
-    .btn-primary { display: inline-block; padding: 14px 28px; border-radius: 50px; background: var(--primary); color: #fff; text-decoration: none; font-size: 15px; font-weight: 700; box-shadow: 0 10px 28px rgba(13,110,253,.28); transition: all 0.3s; }
-    .btn-primary:hover { background: #0b5ed7; transform: translateY(-2px); }
+    /* ===== HERO SECTION ===== */
+    .hero { 
+      background: linear-gradient(135deg, var(--primary-light) 0%, #f7fbff 100%);
+      padding: 80px 0;
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+    }
+    
+    /* ✅ WATERMARK BACKGROUND */
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="200" viewBox="0 0 400 200"><text x="200" y="100" font-family="Arial" font-size="36" font-weight="bold" fill="%230d6efd0a" text-anchor="middle" dy=".3em">AMRITPRADA</text></svg>');
+      background-repeat: repeat;
+      background-size: 400px 200px;
+      opacity: 0.15;
+      z-index: 0;
+      pointer-events: none;
+    }
+    
+    .hero > .container {
+      position: relative;
+      z-index: 1;
+    }
+    
+    .hero-grid { 
+      display: grid; 
+      grid-template-columns: 1fr; 
+      gap: 50px; 
+      align-items: center;
+      width: 100%;
+    }
+    
+    .hero h1 { 
+      font-size: 42px; 
+      margin: 0 0 20px; 
+      color: var(--accent); 
+      line-height: 1.2;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+    }
+    
+    .hero p { 
+      font-size: 17px; 
+      line-height: 1.7; 
+      margin-bottom: 25px; 
+      color: #333;
+      max-width: 90%;
+    }
+    
+    .cert-badges { 
+      display: flex; 
+      flex-wrap: wrap; 
+      gap: 12px; 
+      margin: 25px 0 30px;
+    }
+    
+    .badge { 
+      border: 1px solid #cfe2ff; 
+      background: #fff; 
+      border-radius: 50px; 
+      padding: 10px 20px; 
+      font-size: 13px; 
+      font-weight: 700; 
+      color: var(--accent);
+      box-shadow: 0 4px 12px rgba(13, 110, 253, 0.1);
+    }
+    
+    .btn-primary { 
+      display: inline-block; 
+      padding: 16px 32px; 
+      border-radius: 50px; 
+      background: var(--primary); 
+      color: #fff; 
+      text-decoration: none; 
+      font-size: 15px; 
+      font-weight: 700; 
+      box-shadow: 0 10px 28px rgba(13,110,253,.28); 
+      transition: all 0.3s;
+      border: none;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+    }
+    
+    .btn-primary:hover { 
+      background: #0b5ed7; 
+      transform: translateY(-3px); 
+      box-shadow: 0 15px 35px rgba(13,110,253,.35);
+    }
 
-    /* Sections */
-    .section { padding: 70px 0; }
-    .section h2 { font-size: 32px; margin-bottom: 40px; text-align: center; color: var(--accent); }
-    .grid { display: grid; gap: 25px; }
-    @media (min-width: 900px) { .grid-3 { grid-template-columns: repeat(3, 1fr); } }
-    .card { border: 1px solid var(--border); border-radius: 18px; padding: 24px; background: #fff; box-shadow: 0 10px 25px rgba(0,0,0,.04); transition: transform 0.3s, box-shadow 0.3s; }
-    .card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,.08); }
-    .card h3 { margin: 15px 0 10px; font-size: 18px; color: var(--accent); }
-    .card p { font-size: 15px; line-height: 1.6; color: #555; }
+    /* ===== PRODUCT SECTIONS ===== */
+    .section { 
+      padding: 80px 0;
+      width: 100%;
+    }
+    
+    .section h2 { 
+      font-size: 36px; 
+      margin-bottom: 50px; 
+      text-align: center; 
+      color: var(--accent);
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+    }
+    
+    .grid { 
+      display: grid; 
+      gap: 30px;
+      width: 100%;
+    }
+    
+    .grid-3 { 
+      grid-template-columns: repeat(3, 1fr);
+    }
+    
+    /* ✅ CARD WITH WATERMARK */
+    .card { 
+      border: 1px solid var(--border); 
+      border-radius: 18px; 
+      padding: 25px; 
+      background: #fff; 
+      box-shadow: var(--shadow);
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    /* ✅ CARD WATERMARK */
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="100" viewBox="0 0 200 100"><text x="100" y="50" font-family="Arial" font-size="14" fill="%230d6efd08" text-anchor="middle" dy=".3em">AMRITPRADA</text></svg>');
+      background-repeat: repeat;
+      background-size: 200px 100px;
+      opacity: 0.1;
+      z-index: 0;
+      pointer-events: none;
+    }
+    
+    .card > * {
+      position: relative;
+      z-index: 1;
+    }
+    
+    .card:hover { 
+      transform: translateY(-8px); 
+      box-shadow: 0 20px 40px rgba(0,0,0,.12);
+    }
+    
+    .card h3 { 
+      margin: 20px 0 12px; 
+      font-size: 19px; 
+      color: var(--accent);
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+    }
+    
+    .card p { 
+      font-size: 15px; 
+      line-height: 1.65; 
+      color: #555;
+      flex-grow: 1;
+    }
+    
+    /* ✅ FIXED IMAGE STYLE - NO CROP */
     .card img { 
       border-radius: 14px; 
       width: 100%; 
-      height: 200px; 
-      object-fit: cover;
+      height: 220px; 
+      object-fit: contain; /* ✅ CHANGED: contain (no crop) */
       background-color: #f8fafc;
-      padding: 10px;
+      padding: 15px;
       border: 1px solid #e5e7eb;
+      display: block;
+      margin: 0 auto;
+    }
+    
+    .product-img { 
+      background-color: #f0f5ff !important;
+      object-fit: contain !important;
     }
 
-    /* Product-specific image adjustments */
-    .product-img { background-color: #f8fafc; }
+    /* ===== WHY CHOOSE US ===== */
+    .why { 
+      background: #f2f6ff; 
+    }
+    
+    .why .card { 
+      text-align: center; 
+      padding: 30px 25px;
+    }
+    
+    .why .card i { 
+      font-size: 42px; 
+      color: var(--primary); 
+      margin-bottom: 20px;
+    }
 
-    /* Why Choose Us */
-    .why { background: #f2f6ff; }
-    .why .card { text-align: center; }
-    .why .card i { font-size: 36px; color: var(--primary); margin-bottom: 15px; }
+    /* ===== ABOUT ===== */
+    .about p { 
+      max-width: 850px; 
+      margin: 0 auto; 
+      font-size: 17px; 
+      line-height: 1.8; 
+      text-align: center; 
+      color: #444;
+      font-size: 18px;
+    }
 
-    /* About */
-    .about p { max-width: 800px; margin: 0 auto; font-size: 17px; line-height: 1.8; text-align: center; color: #444; }
+    /* ===== CONTACT ===== */
+    .contact { 
+      background: var(--soft); 
+    }
+    
+    .contact form { 
+      max-width: 700px; 
+      margin: 0 auto;
+      width: 100%;
+    }
+    
+    label { 
+      font-size: 15px; 
+      font-weight: 600; 
+      display: block; 
+      margin: 18px 0 10px; 
+      color: #333;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    input, textarea { 
+      width: 100%; 
+      padding: 16px; 
+      border-radius: 12px; 
+      border: 1px solid #d1d5db; 
+      font-size: 15px; 
+      font-family: 'Inter', sans-serif;
+      transition: border 0.3s;
+    }
+    
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.1);
+    }
+    
+    textarea { 
+      min-height: 150px; 
+      resize: vertical; 
+    }
+    
+    .btn-submit { 
+      margin-top: 25px; 
+      background: var(--primary); 
+      color: #fff; 
+      padding: 16px 24px; 
+      border-radius: 12px; 
+      border: none; 
+      cursor: pointer; 
+      font-weight: 700; 
+      font-size: 16px; 
+      width: 100%; 
+      transition: background 0.3s;
+      font-family: 'Inter', sans-serif;
+    }
+    
+    .btn-submit:hover { 
+      background: #0b5ed7; 
+    }
 
-    /* Contact */
-    .contact { background: var(--soft); }
-    .contact form { max-width: 700px; margin: 0 auto; }
-    label { font-size: 14px; font-weight: 600; display: block; margin: 15px 0 8px; color: #333; }
-    input, textarea { width: 100%; padding: 14px; border-radius: 12px; border: 1px solid #d1d5db; font-size: 15px; font-family: inherit; }
-    textarea { min-height: 140px; resize: vertical; }
-    .btn-submit { margin-top: 20px; background: var(--primary); color: #fff; padding: 14px 24px; border-radius: 12px; border: none; cursor: pointer; font-weight: 700; font-size: 16px; width: 100%; transition: background 0.3s; }
-    .btn-submit:hover { background: #0b5ed7; }
+    /* ===== TRUST PROMISES ===== */
+    .trust-promises { 
+      background: #fff; 
+      border-top: 1px solid var(--border); 
+    }
 
-    /* Trust Promises */
-    .trust-promises { background: #fff; border-top: 1px solid var(--border); }
+    /* ===== EXPORT COUNTRIES ===== */
+    .countries { 
+      background: #f8fafc; 
+    }
+    
+    .country-badges { 
+      display: flex; 
+      flex-wrap: wrap; 
+      justify-content: center; 
+      gap: 15px; 
+      margin-top: 30px;
+    }
+    
+    .country-badge { 
+      background: white; 
+      border-radius: 12px; 
+      padding: 12px 22px; 
+      box-shadow: 0 4px 12px rgba(0,0,0,.05); 
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      white-space: nowrap;
+    }
+    
+    .country-badge img {
+      width: 24px;
+      height: 18px;
+      border-radius: 2px;
+      object-fit: cover;
+    }
 
-    /* Export Countries */
-    .countries { background: #f8fafc; }
-    .country-badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 25px; }
-    .country-badge { background: white; border-radius: 12px; padding: 10px 20px; box-shadow: 0 4px 12px rgba(0,0,0,.05); font-weight: 600; }
+    /* ===== FOOTER ===== */
+    footer { 
+      background: var(--accent); 
+      color: #e5ecff; 
+      padding: 50px 0 25px;
+      width: 100%;
+    }
+    
+    footer .cols { 
+      display: grid; 
+      gap: 40px;
+    }
+    
+    footer a { 
+      color: #e5ecff; 
+      text-decoration: none;
+      opacity: 0.9;
+      transition: opacity 0.2s;
+    }
+    
+    footer a:hover { 
+      opacity: 1; 
+      text-decoration: underline;
+    }
+    
+    footer strong { 
+      font-size: 20px; 
+      display: block;
+      margin-bottom: 15px;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .footer-bottom { 
+      text-align: center; 
+      margin-top: 40px; 
+      padding-top: 25px; 
+      border-top: 1px solid rgba(255,255,255,.15); 
+      font-size: 14px; 
+      opacity: .8;
+      width: 100%;
+    }
 
-    /* Footer */
-    footer { background: var(--accent); color: #e5ecff; padding: 40px 0 20px; }
-    footer .cols { display: grid; gap: 30px; }
-    @media (min-width: 900px) { footer .cols { grid-template-columns: repeat(3,1fr); } }
-    footer a { color: #e5ecff; text-decoration: none; }
-    footer a:hover { text-decoration: underline; }
-    footer strong { font-size: 18px; }
-    .footer-bottom { text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.1); font-size: 13px; opacity: .8; }
-
-    /* WhatsApp Button */
+    /* ===== WHATSAPP BUTTON ===== */
     .whatsapp-float {
       position: fixed;
-      bottom: 25px;
-      right: 25px;
+      bottom: 30px;
+      right: 30px;
       background-color: #25D366;
       color: #fff;
-      width: 60px;
-      height: 60px;
+      width: 65px;
+      height: 65px;
       border-radius: 50%;
       text-align: center;
-      font-size: 30px;
-      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
-      z-index: 100;
+      font-size: 32px;
+      box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5);
+      z-index: 1000;
       display: flex;
       align-items: center;
       justify-content: center;
       text-decoration: none;
       transition: all 0.3s;
     }
+    
     .whatsapp-float:hover {
       background-color: #128C7E;
       transform: scale(1.1);
+      box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
     }
 
-    /* Responsive */
+    /* ===================== */
+    /* ✅ RESPONSIVE DESIGN */
+    /* ===================== */
+    
+    /* Tablet */
+    @media (max-width: 1024px) {
+      .container { padding: 0 25px; }
+      .hero h1 { font-size: 36px; }
+      .section h2 { font-size: 32px; }
+      .grid-3 { grid-template-columns: repeat(2, 1fr); }
+      .hero-grid { gap: 40px; }
+    }
+    
+    /* Mobile */
     @media (max-width: 768px) {
+      .nav { padding: 12px 0; }
+      
+      /* Mobile Menu */
       nav { 
         display: none; 
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
+        position: fixed;
+        top: 80px;
         left: 0;
         right: 0;
         background: var(--primary);
-        padding: 20px;
-        box-shadow: 0 10px 20px rgba(0,0,0,.1);
+        padding: 25px;
+        z-index: 999;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        box-shadow: 0 15px 40px rgba(0,0,0,.2);
       }
-      nav a { margin: 10px 0; }
-      .mobile-menu { display: block; }
-      .hero h1 { font-size: 30px; }
-      .section h2 { font-size: 28px; }
-      .card { padding: 20px; }
-      .logo img { height: 40px; }
+      
+      nav.active {
+        display: flex;
+      }
+      
+      nav a { 
+        margin: 0;
+        padding: 14px 0;
+        width: 100%;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        font-size: 16px;
+      }
+      
+      nav a:last-child {
+        border-bottom: none;
+      }
+      
+      nav a i { margin-right: 10px; }
+      
+      .mobile-menu { 
+        display: block; 
+      }
+      
+      .hero h1 { font-size: 30px; margin-bottom: 15px; }
+      .hero p { font-size: 16px; max-width: 100%; }
+      .section h2 { font-size: 28px; margin-bottom: 40px; }
+      .section { padding: 60px 0; }
+      .hero { padding: 60px 0; }
+      
+      .grid-3 { 
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+      
+      .card { padding: 22px; }
+      .card img { height: 200px; padding: 12px; }
+      
+      footer .cols {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+      
+      .country-badges {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 15px;
+        -webkit-overflow-scrolling: touch;
+      }
+      
+      .country-badge {
+        flex-shrink: 0;
+      }
+      
+      .logo img { height: 48px; }
       .logo span { font-size: 16px; }
-      .card img { height: 160px; }
+      
+      .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+        width: 60px;
+        height: 60px;
+        font-size: 28px;
+      }
+      
+      .hero::before {
+        background-size: 300px 150px;
+      }
+    }
+    
+    /* Small Mobile */
+    @media (max-width: 480px) {
+      .container { padding: 0 18px; }
+      .hero h1 { font-size: 26px; }
+      .section h2 { font-size: 24px; }
+      .card { padding: 20px; }
+      .card img { height: 190px; }
+      .logo img { height: 42px; }
+      .logo span { font-size: 15px; margin-left: 5px; }
+      .btn-primary { padding: 14px 28px; font-size: 14px; }
+      .hero-grid { gap: 35px; }
+      .hero { padding: 50px 0; }
+      .section { padding: 50px 0; }
+    }
+    
+    /* Extra Small */
+    @media (max-width: 360px) {
+      .hero h1 { font-size: 24px; }
+      .logo img { height: 38px; }
+      .logo span { font-size: 14px; }
+      .card h3 { font-size: 17px; }
+      .card p { font-size: 14px; }
+    }
+    
+    /* Landscape Mode */
+    @media (max-height: 600px) and (orientation: landscape) {
+      .hero { padding: 50px 0; }
+      .section { padding: 50px 0; }
+      .card img { height: 180px; }
     }
   </style>
 </head>
@@ -160,12 +648,17 @@
     <div class="container nav">
       <div class="logo">
         <a href="#home">
-          <img src="COMPANY_LOGO-ICON.png" alt="Amritprada Exports Logo"" />
+          <!-- ✅ LOGO FIXED -->
+          <img src="COMPANY_LOGO-ICON.png" alt="Amritprada Exports Logo" />
           <span>Amritprada Exports</span>
         </a>
       </div>
-      <div class="mobile-menu"><i class="fas fa-bars"></i></div>
-      <nav>
+      
+      <button class="mobile-menu" id="mobileMenuBtn">
+        <i class="fas fa-bars"></i>
+      </button>
+      
+      <nav id="mainNav">
         <a href="#home"><i class="fas fa-home"></i> Home</a>
         <a href="#products"><i class="fas fa-box-open"></i> Products</a>
         <a href="#about"><i class="fas fa-info-circle"></i> About</a>
@@ -192,7 +685,8 @@
         <a class="btn-primary" href="#contact"><i class="fas fa-file-alt"></i> Get a Quote</a>
       </div>
       <div class="trust-shadow">
-        <img src="medical equipments1.png" alt="Sterile Medical Products" style="border-radius: 18px; width:100%;" />
+        <!-- ✅ HERO IMAGE - USE 1200x800 SIZE -->
+        <img src="medical equipments1.png" alt="Sterile Medical Products" style="border-radius: 18px; width:100%; height:auto; max-height:500px; object-fit:cover;" />
       </div>
     </div>
   </section>
@@ -202,6 +696,7 @@
     <div class="container">
       <h2>Our Product Range</h2>
       <div class="grid grid-3">
+        <!-- ✅ ALL PRODUCT IMAGES SIMPLE FORMAT -->
         <div class="card">
           <img src="syringes1.png" alt="Disposable Syringes" class="product-img" />
           <h3>Disposable Hypodermic Syringes</h3>
@@ -213,7 +708,7 @@
           <p>Standard, safety, veterinary, blunt, pen & Huber needles. Various gauges available.</p>
         </div>
         <div class="card">
-          <img src="anesthesia kit.png?auto=compress&cs=tinysrgb&w=800&h=600&fit=contain" alt="Anesthesia Products" class="product-img" />
+          <img src="anesthesia kit.png" alt="Anesthesia Products" class="product-img" />
           <h3>Anesthesia Products</h3>
           <p>Spinal needles, epidural needles & complete epidural kits. Medical grade quality.</p>
         </div>
@@ -309,22 +804,22 @@
   <section class="section countries">
     <div class="container">
       <h2>We Export Worldwide</h2>
-      <p style="text-align: center; max-width: 800px; margin: 0 auto 30px; color: #555;">
+      <p style="text-align: center; max-width: 850px; margin: 0 auto 35px; color: #555; font-size: 17px;">
         Serving trusted buyers across Africa, Middle East, Asia, Europe & Latin America.
       </p>
       <div class="country-badges">
-  <span class="country-badge"><img src="https://flagcdn.com/w20/in.png" alt="🇮🇳" style="width:20px; height:15px; margin-right:8px; vertical-align:middle;"> India</span>
-  <span class="country-badge"><img src="https://flagcdn.com/w20/ae.png" alt="🇦🇪" style="width:20px; height:15px; margin-right:8px; vertical-align:middle;"> UAE</span>
-  <span class="country-badge"><img src="https://flagcdn.com/w20/sa.png" alt="🇸🇦" style="width:20px; height:15px; margin-right:8px; vertical-align:middle;"> Saudi Arabia</span>
-  <span class="country-badge"><img src="https://flagcdn.com/w20/ng.png" alt="🇳🇬" style="width:20px; height:15px; margin-right:8px; vertical-align:middle;"> Nigeria</span>
-  <span class="country-badge"><img src="https://flagcdn.com/w20/ke.png" alt="🇰🇪" style="width:20px; height:15px; margin-right:8px; vertical-align:middle;"> Kenya</span>
-  <span class="country-badge"><img src="https://flagcdn.com/w20/za.png" alt="🇿🇦" style="width:20px; height:15px; margin-right:8px; vertical-align:middle;"> South Africa</span>
-  <span class="country-badge"><img src="https://flagcdn.com/w20/et.png" alt="🇪🇹" style="width:20px; height:15px; margin-right:8px; vertical-align:middle;"> Ethiopia</span>
-  <span class="country-badge"><img src="https://flagcdn.com/w20/tz.png" alt="🇹🇿" style="width:20px; height:15px; margin-right:8px; vertical-align:middle;"> Tanzania</span>
-  <span class="country-badge"><img src="https://flagcdn.com/w20/ug.png" alt="🇺🇬" style="width:20px; height:15px; margin-right:8px; vertical-align:middle;"> Uganda</span>
-  <span class="country-badge"><img src="https://flagcdn.com/w20/gh.png" alt="🇬🇭" style="width:20px; height:15px; margin-right:8px; vertical-align:middle;"> Ghana</span>
-  <span class="country-badge">🌍 And More...</span>
-</div>
+        <span class="country-badge"><img src="https://flagcdn.com/w24/in.png" alt="🇮🇳" style="width:24px; height:18px;"> India</span>
+        <span class="country-badge"><img src="https://flagcdn.com/w24/ae.png" alt="🇦🇪" style="width:24px; height:18px;"> UAE</span>
+        <span class="country-badge"><img src="https://flagcdn.com/w24/sa.png" alt="🇸🇦" style="width:24px; height:18px;"> Saudi Arabia</span>
+        <span class="country-badge"><img src="https://flagcdn.com/w24/ng.png" alt="🇳🇬" style="width:24px; height:18px;"> Nigeria</span>
+        <span class="country-badge"><img src="https://flagcdn.com/w24/ke.png" alt="🇰🇪" style="width:24px; height:18px;"> Kenya</span>
+        <span class="country-badge"><img src="https://flagcdn.com/w24/za.png" alt="🇿🇦" style="width:24px; height:18px;"> South Africa</span>
+        <span class="country-badge"><img src="https://flagcdn.com/w24/et.png" alt="🇪🇹" style="width:24px; height:18px;"> Ethiopia</span>
+        <span class="country-badge"><img src="https://flagcdn.com/w24/tz.png" alt="🇹🇿" style="width:24px; height:18px;"> Tanzania</span>
+        <span class="country-badge"><img src="https://flagcdn.com/w24/ug.png" alt="🇺🇬" style="width:24px; height:18px;"> Uganda</span>
+        <span class="country-badge"><img src="https://flagcdn.com/w24/gh.png" alt="🇬🇭" style="width:24px; height:18px;"> Ghana</span>
+        <span class="country-badge">🌍 And More...</span>
+      </div>
     </div>
   </section>
 
@@ -384,7 +879,7 @@
         <label>Products Required *</label>
         <textarea name="message" placeholder="Please list the products, quantities, and any specific requirements..." required></textarea>
         
-        <p style="font-size:15px; margin-top:15px; padding: 15px; background: var(--primary-light); border-radius: 10px;">
+        <p style="font-size:16px; margin-top:20px; padding: 20px; background: var(--primary-light); border-radius: 12px; line-height: 1.7;">
           <i class="fas fa-envelope"></i> <strong>Email:</strong> info@amritprada.com<br>
           <i class="fas fa-phone"></i> <strong>Phone/WhatsApp:</strong> +91-7204517831<br>
           <i class="fas fa-clock"></i> <strong>Response Time:</strong> Within 24 hours
@@ -425,93 +920,80 @@
   </footer>
 
   <!-- WhatsApp Float -->
-  <a href="https://wa.me/7204517831?text=Hi%20Amritprada%20Exports,%20I%20would%20like%20to%20inquire%20about%20your%20products." target="_blank" class="whatsapp-float">
+  <a href="https://wa.me/917204517831?text=Hi%20Amritprada%20Exports,%20I%20would%20like%20to%20inquire%20about%20your%20products." target="_blank" class="whatsapp-float" aria-label="Contact on WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
 
   <script>
-    // Mobile menu toggle
-    document.querySelector('.mobile-menu').addEventListener('click', function() {
-      const nav = document.querySelector('nav');
-      if (nav.style.display === 'flex') {
-        nav.style.display = 'none';
-      } else {
-        nav.style.display = 'flex';
-      }
+    // ✅ MODERN MOBILE MENU
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mainNav = document.getElementById('mainNav');
+    
+    mobileMenuBtn.addEventListener('click', function() {
+      mainNav.classList.toggle('active');
+      mobileMenuBtn.innerHTML = mainNav.classList.contains('active') 
+        ? '<i class="fas fa-times"></i>' 
+        : '<i class="fas fa-bars"></i>';
     });
-
-    // Close mobile menu when clicking a link
+    
+    // Close menu when clicking a link
     document.querySelectorAll('nav a').forEach(link => {
       link.addEventListener('click', () => {
         if (window.innerWidth <= 768) {
-          document.querySelector('nav').style.display = 'none';
+          mainNav.classList.remove('active');
+          mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
         }
       });
     });
-
-    // Update nav display on window resize
-    window.addEventListener('resize', function() {
-      if (window.innerWidth > 768) {
-        document.querySelector('nav').style.display = '';
-      } else {
-        document.querySelector('nav').style.display = 'none';
-      }
-    });
-
-    // Smooth scrolling for anchor links
+    
+    // ✅ SMOOTH SCROLLING
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
-        e.preventDefault();
         const targetId = this.getAttribute('href');
         if(targetId === '#') return;
         
         const targetElement = document.querySelector(targetId);
         if(targetElement) {
+          e.preventDefault();
           window.scrollTo({
-            top: targetElement.offsetTop - 80,
+            top: targetElement.offsetTop - 90,
             behavior: 'smooth'
           });
         }
       });
     });
-
-    // Image fallback system
+    
+    // ✅ IMAGE FALLBACK SYSTEM
     document.addEventListener('DOMContentLoaded', function() {
       const productImages = document.querySelectorAll('.card img');
-      const placeholderBase = 'https://placehold.co/600x400/0d6efd/ffffff?text=';
-      const productTexts = [
-        'Syringes',
-        'Needles', 
-        'Anesthesia',
-        'Infusion Sets',
-        'IV Cannula',
-        'Stopcocks',
-        'Veterinary',
-        'Biopsy',
-        'Respiratory',
-        'Miscellaneous',
-        'Surgical Gloves',
-        'PPE'
-      ];
+      const placeholderBase = 'https://images.unsplash.com/photo-1586773860418-dc22f8b874bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80';
       
-      productImages.forEach((img, index) => {
-        // Add error handler
+      productImages.forEach((img) => {
         img.onerror = function() {
-          const text = productTexts[index] || 'Medical Product';
-          this.src = `${placeholderBase}${text}`;
-          this.alt = `${text} - Product Image`;
+          this.src = placeholderBase;
+          this.alt = 'Medical Products - Amritprada Exports';
         };
         
-        // Also check if image loaded properly after 2 seconds
+        // Check if image loaded
         setTimeout(() => {
           if (img.naturalHeight === 0) {
-            const text = productTexts[index] || 'Medical Product';
-            img.src = `${placeholderBase}${text}`;
-            img.alt = `${text} - Product Image`;
+            img.src = placeholderBase;
+            img.alt = 'Medical Products - Amritprada Exports';
           }
-        }, 2000);
+        }, 3000);
       });
     });
+    
+    // ✅ RESIZE HANDLER
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > 768) {
+        mainNav.classList.remove('active');
+        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+      }
+    });
+    
+    // ✅ TOUCH DEVICE SUPPORT
+    document.addEventListener('touchstart', function() {}, {passive: true});
   </script>
 </body>
 </html>
