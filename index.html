@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Amritprada Exports Pvt. Ltd. | Trusted Surgical Disposables Supplier</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
     /* Basic Reset & Fonts */
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -59,28 +59,33 @@
     /* Product-specific image adjustments */
     .product-img { background-color: #f8fafc; }
 
-    /* Why Choose Us */
-    .why { background: #f2f6ff; position: relative; overflow: hidden; }
-    .why::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background-image: url('YOUR_FADED_BG_IMAGE.png'); /* Replace with your faded background image or use a color overlay */
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
-      opacity: 0.1; /* Light faded effect */
-      z-index: 0;
+    /* Why Choose Us with faded background */
+    .why {
+        background-color: #f2f6ff; /* Light background color */
+        position: relative;
+        overflow: hidden;
+        padding: 70px 20px;
     }
-    .why .container { position: relative; z-index: 1; }
-    .why h2 { font-size: 32px; margin-bottom: 40px; text-align: center; color: var(--accent); }
-    .why .grid { display: grid; gap: 20px; }
-    .why .card { text-align: center; background: transparent; border: none; padding: 0; }
-    .why .card i { font-size: 36px; color: var(--primary); margin-bottom: 15px; }
-    .why .card h3 { margin-top: 0; font-size: 20px; }
-    .why .card p { font-size: 15px; color: #555; }
+    /* Optional: Add a faint background pattern or image if desired
+    .why::before {
+        content: "";
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background-image: url('your-faded-background.png'); 
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        opacity: 0.1; 
+        z-index: 0;
+    }
+    */
+    .why .container {
+        position: relative;
+        z-index: 1;
+        padding: 40px 20px;
+    }
 
-    /* Remove the large bottom image here as per your request */
+    /* Remove the large footer image here as per your request */
 
     /* Other styles remain unchanged */
 
@@ -95,10 +100,6 @@
       .logo span { font-size: 16px; }
       .card img { height: 160px; }
     }
-
-    /* Watermark overlay styles (removed the previous watermark class) */
-    /* Now using a subtle background overlay in the "why" section */
-
   </style>
 </head>
 <body>
@@ -157,6 +158,13 @@
         </div>
         <!-- ... other product cards ... -->
         <!-- Repeat for all product images with loading="lazy" -->
+        <!-- Example:
+        <div class="card">
+          <img src="another-product.png" alt="Product Name" loading="lazy" />
+          <h3>Product Name</h3>
+          <p>Description...</p>
+        </div>
+        -->
       </div>
     </div>
   </section>
@@ -207,7 +215,7 @@
       <p style="text-align: center; max-width: 800px; margin: 0 auto 30px; color: #555;">
         Serving trusted buyers across Africa, Middle East, Asia, Europe & Latin America.
       </p>
-      <div class="country-badges">
+      <div class="country-badges" style="display:flex; flex-wrap:wrap; gap:10px; justify-content:center;">
         <span class="country-badge"><img src="https://flagcdn.com/w20/in.png" alt="🇮🇳" /> India</span>
         <span class="country-badge"><img src="https://flagcdn.com/w20/ae.png" alt="🇦🇪" /> UAE</span>
         <span class="country-badge"><img src="https://flagcdn.com/w20/sa.png" alt="🇸🇦" /> Saudi Arabia</span>
@@ -229,7 +237,7 @@
       <h2>About Amritprada Exports</h2>
       <p>
         Built on reliability and transparency, Amritprada Exports focuses on delivering safe, compliant, and value‑driven medical disposables. Buyers choose us because working with us feels simple, clear, and risk‑free.
-        <br><br>
+        <br /><br />
         Every order is handled carefully — product matching, packaging checks, and documentation support — so buyers feel confident before, during, and after shipment.
       </p>
     </div>
@@ -280,8 +288,8 @@
         <textarea name="message" placeholder="Please list the products, quantities, and any specific requirements..." required></textarea>
 
         <p style="font-size:15px; margin-top:15px; padding: 15px; background: var(--primary-light); border-radius: 10px;">
-          <i class="fas fa-envelope"></i> <strong>Email:</strong> info@amritprada.com<br>
-          <i class="fas fa-phone"></i> <strong>Phone/WhatsApp:</strong> +91-7204517831<br>
+          <i class="fas fa-envelope"></i> <strong>Email:</strong> info@amritprada.com<br />
+          <i class="fas fa-phone"></i> <strong>Phone/WhatsApp:</strong> +91-7204517831<br />
           <i class="fas fa-clock"></i> <strong>Response Time:</strong> Within 24 hours
         </p>
 
@@ -292,39 +300,37 @@
 
   <!-- Footer -->
   <footer>
-    <div class="container cols">
-      <div>
+    <div class="container cols" style="display:flex; flex-wrap: wrap; justify-content: space-between; padding:20px 0;">
+      <div style="flex:1; min-width:200px;">
         <strong>Amritprada Exports Pvt. Ltd.</strong><br />
-        Trusted Global Partner for Surgical & Medical Disposables<br><br>
+        Trusted Global Partner for Surgical & Medical Disposables<br /><br />
         <i class="fas fa-map-marker-alt"></i> Registered in India<br />
         <i class="fas fa-globe"></i> Exporting Worldwide
       </div>
-      <div>
+      <div style="flex:1; min-width:200px;">
         <strong>Quick Links</strong><br>
         <div><a href="#home">Home</a></div>
         <div><a href="#products">Products</a></div>
         <div><a href="#about">About</a></div>
         <div><a href="#contact">Contact</a></div>
       </div>
-      <div>
+      <div style="flex:1; min-width:200px;">
         <strong>Contact Info</strong><br>
-        <i class="fas fa-envelope"></i> info@amritprada.com<br>
-        <i class="fas fa-phone"></i> +91-7204517831<br>
+        <i class="fas fa-envelope"></i> info@amritprada.com<br />
+        <i class="fas fa-phone"></i> +91-7204517831<br />
         <i class="fab fa-whatsapp"></i> +91-7204517831
       </div>
     </div>
-    <div class="footer-bottom">
-      © 2026 Amritprada Exports Pvt. Ltd. — All Rights Reserved<br>
+    <div style="text-align:center; padding:10px 0; border-top:1px solid #e5e7eb; margin-top:20px;">
+      © 2026 Amritprada Exports Pvt. Ltd. — All Rights Reserved<br />
       ISO 13485 | ISO 9001 | GMP/WHO-GMP | CE Certified | CDSCO India
     </div>
   </footer>
 
   <!-- WhatsApp Float -->
-  <a href="https://wa.me/7204517831?text=Hi%20Amritprada%20Exports,%20I%20would%20like%20to%20inquire%20about%20your%20products." target="_blank" class="whatsapp-float">
+  <a href="https://wa.me/7204517831?text=Hi%20Amritprada%20Exports,%20I%20would%20like%20to%20inquire%20about%20your%20products." target="_blank" class="whatsapp-float" style="position:fixed; bottom:20px; right:20px; background:#25D366; color:#fff; border-radius:50%; padding:15px; font-size:24px; z-index:1000; box-shadow:0 4px 8px rgba(0,0,0,0.2);">
     <i class="fab fa-whatsapp"></i>
   </a>
-
-  <!-- Removed the large bottom image as per your instruction -->
 
   <script>
     // Mobile menu toggle
