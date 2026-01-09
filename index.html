@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Amritprada Exports Pvt. Ltd. | Trusted Surgical Disposables Supplier</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     /* Basic Reset & Fonts */
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -59,35 +59,65 @@
     /* Product-specific image adjustments */
     .product-img { background-color: #f8fafc; }
 
-    /* Why Choose Us with faded background */
-    .why {
-        background-color: #f2f6ff; /* Light background color */
-        position: relative;
-        overflow: hidden;
-        padding: 70px 20px;
-    }
-    /* Optional: Add a faint background pattern or image if desired
-    .why::before {
-        content: "";
-        position: absolute;
-        top: 0; left: 0; right: 0; bottom: 0;
-        background-image: url('your-faded-background.png'); 
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-        opacity: 0.1; 
-        z-index: 0;
-    }
-    */
-    .why .container {
-        position: relative;
-        z-index: 1;
-        padding: 40px 20px;
-    }
+    /* Why Choose Us */
+    .why { background: #f2f6ff; }
+    .why .card { text-align: center; }
+    .why .card i { font-size: 36px; color: var(--primary); margin-bottom: 15px; }
 
-    /* Remove the large footer image here as per your request */
+    /* About */
+    .about p { max-width: 800px; margin: 0 auto; font-size: 17px; line-height: 1.8; text-align: center; color: #444; }
 
-    /* Other styles remain unchanged */
+    /* Contact */
+    .contact { background: var(--soft); }
+    .contact form { max-width: 700px; margin: 0 auto; }
+    label { font-size: 14px; font-weight: 600; display: block; margin: 15px 0 8px; color: #333; }
+    input, textarea { width: 100%; padding: 14px; border-radius: 12px; border: 1px solid #d1d5db; font-size: 15px; font-family: inherit; }
+    textarea { min-height: 140px; resize: vertical; }
+    .btn-submit { margin-top: 20px; background: var(--primary); color: #fff; padding: 14px 24px; border-radius: 12px; border: none; cursor: pointer; font-weight: 700; font-size: 16px; width: 100%; transition: background 0.3s; }
+    .btn-submit:hover { background: #0b5ed7; }
+
+    /* Trust Promises */
+    .trust-promises { background: #fff; border-top: 1px solid var(--border); }
+
+    /* Export Countries */
+    .countries { background: #f8fafc; }
+    .country-badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 25px; }
+    .country-badge { background: white; border-radius: 12px; padding: 10px 20px; box-shadow: 0 4px 12px rgba(0,0,0,.05); font-weight: 600; display: flex; align-items: center; }
+    .country-badge img { width: 20px; height: 15px; margin-right: 8px; vertical-align: middle; }
+
+    /* Footer */
+    footer { background: var(--accent); color: #e5ecff; padding: 40px 0 20px; }
+    footer .cols { display: grid; gap: 30px; }
+    @media (min-width: 900px) { footer .cols { grid-template-columns: repeat(3,1fr); } }
+    footer a { color: #e5ecff; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    footer strong { font-size: 18px; }
+    .footer-bottom { text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.1); font-size: 13px; opacity: .8; }
+
+    /* WhatsApp Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background-color: #25D366;
+      color: #fff;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    .whatsapp-float:hover {
+      background-color: #128C7E;
+      transform: scale(1.1);
+    }
 
     /* Responsive adjustments */
     @media(max-width:768px){
@@ -100,6 +130,26 @@
       .logo span { font-size: 16px; }
       .card img { height: 160px; }
     }
+
+    /* Watermark overlay styles (added at the end) */
+    /* Removed the previous watermark class, replaced with a full-page faint background watermark */
+    /* New CSS for background watermark: */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('COMPANY_LOGO-WITH TAGLINE.png'); /* Your watermark image */
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 50%; /* Adjust size as needed */
+      opacity: 0.05; /* Light shade for watermark effect */
+      pointer-events: none; /* Allow clicks to pass through */
+      z-index: -1; /* Behind all content */
+    }
+
   </style>
 </head>
 <body>
@@ -150,26 +200,76 @@
     <div class="container">
       <h2>Our Product Range</h2>
       <div class="grid grid-3">
-        <!-- Product cards as before, with loading="lazy" -->
         <div class="card">
           <img src="syringes1.png" alt="Disposable Syringes" class="product-img" loading="lazy" />
           <h3>Disposable Hypodermic Syringes</h3>
           <p>Hypodermic, auto-disable, re‑use prevention, insulin, feeding & catheter tip syringes. Sterile EO/Gamma.</p>
         </div>
-        <!-- ... other product cards ... -->
-        <!-- Repeat for all product images with loading="lazy" -->
-        <!-- Example:
         <div class="card">
-          <img src="another-product.png" alt="Product Name" loading="lazy" />
-          <h3>Product Name</h3>
-          <p>Description...</p>
+          <img src="needles1.png" alt="Hypodermic Needles" class="product-img" loading="lazy" />
+          <h3>Hypodermic Needles</h3>
+          <p>Standard, safety, veterinary, blunt, pen & Huber needles. Various gauges available.</p>
         </div>
-        -->
+        <div class="card">
+          <img src="anesthesia kit.png?auto=compress&cs=tinysrgb&w=800&h=600&fit=contain" alt="Anesthesia Products" class="product-img" loading="lazy" />
+          <h3>Anesthesia Products</h3>
+          <p>Spinal needles, epidural needles & complete epidural kits. Medical grade quality.</p>
+        </div>
+        <!-- ... Repeat for other images with loading="lazy" ... -->
+        <!-- To save space, I will not repeat all here, but all images should have loading="lazy" -->
+        <!-- Continue below with other product cards, ensure image tags include loading="lazy" -->
+        <div class="card">
+          <img src="infusion transfusion.jpg" alt="Infusion Sets" class="product-img" loading="lazy" />
+          <h3>Infusion & Transfusion</h3>
+          <p>Infusion sets, IV flow regulators, micro drip, burette & blood administration sets.</p>
+        </div>
+         <div class="card">
+          <img src="iv cannula.jpg" alt="IV Cannula" class="product-img" loading="lazy" />
+          <h3>IV Cannula & Scalp Vein</h3>
+          <p>IV cannulas and butterfly scalp vein sets. Various sizes available with safety features.</p>
+        </div>
+        <div class="card">
+          <img src="Stopcock.png" alt="Three Way Stopcocks" class="product-img" loading="lazy" />
+          <h3>Three Way Stopcocks</h3>
+          <p>3‑way stopcocks & extension tubes. Medical grade polycarbonate construction.</p>
+        </div>
+        <div class="card">
+          <img src="Veterinary Products.png" alt="Veterinary Products" class="product-img" loading="lazy" />
+          <h3>Veterinary Products</h3>
+          <p>Endotracheal, ryles, tracheostomy tubes & veterinary scalpels.</p>
+        </div>
+        <div class="card">
+          <img src="Biopsy 1.png" alt="Biopsy Products" class="product-img" loading="lazy" />
+          <h3>Biopsy Products</h3>
+          <p>Aspiration, automatic & full‑core biopsy needles and instruments.</p>
+        </div>
+        <div class="card">
+          <img src="Respiratory Products.png" alt="Respiratory Products" class="product-img" loading="lazy" />
+          <h3>Respiratory Products</h3>
+          <p>Oxygen masks, nasal cannula, nebulizing masks & accessories.</p>
+        </div>
+        <div class="card">
+          <img src="Miscellaneous Products.png" alt="Miscellaneous Products" class="product-img" loading="lazy" />
+          <h3>Miscellaneous Products</h3>
+          <p>Umbilical cord clamps, blood lancets & urine collection bags.</p>
+        </div>
+        <div class="card">
+          <img src="gloves.png" alt="Surgical Gloves" class="product-img" loading="lazy" />
+          <h3>Surgical Gloves</h3>
+          <p>Sterile surgical gloves, examination gloves in various sizes.</p>
+        </div>
+        <div class="card">
+          <img src="Personal Protection 2.png" alt="Personal Protection" class="product-img" loading="lazy" />
+          <h3>Personal Protection</h3>
+          <p>Surgical masks, face shields, gowns & other PPE items.</p>
+        </div>
+        <!-- Continue all other product cards similarly -->
+        <!-- ... -->
       </div>
     </div>
   </section>
 
-  <!-- Why Choose Us with faded background -->
+  <!-- Why Choose Us -->
   <section class="section why">
     <div class="container">
       <h2>Why Buyers Trust Amritprada</h2>
@@ -215,7 +315,7 @@
       <p style="text-align: center; max-width: 800px; margin: 0 auto 30px; color: #555;">
         Serving trusted buyers across Africa, Middle East, Asia, Europe & Latin America.
       </p>
-      <div class="country-badges" style="display:flex; flex-wrap:wrap; gap:10px; justify-content:center;">
+      <div class="country-badges">
         <span class="country-badge"><img src="https://flagcdn.com/w20/in.png" alt="🇮🇳" /> India</span>
         <span class="country-badge"><img src="https://flagcdn.com/w20/ae.png" alt="🇦🇪" /> UAE</span>
         <span class="country-badge"><img src="https://flagcdn.com/w20/sa.png" alt="🇸🇦" /> Saudi Arabia</span>
@@ -237,7 +337,7 @@
       <h2>About Amritprada Exports</h2>
       <p>
         Built on reliability and transparency, Amritprada Exports focuses on delivering safe, compliant, and value‑driven medical disposables. Buyers choose us because working with us feels simple, clear, and risk‑free.
-        <br /><br />
+        <br><br>
         Every order is handled carefully — product matching, packaging checks, and documentation support — so buyers feel confident before, during, and after shipment.
       </p>
     </div>
@@ -288,8 +388,8 @@
         <textarea name="message" placeholder="Please list the products, quantities, and any specific requirements..." required></textarea>
 
         <p style="font-size:15px; margin-top:15px; padding: 15px; background: var(--primary-light); border-radius: 10px;">
-          <i class="fas fa-envelope"></i> <strong>Email:</strong> info@amritprada.com<br />
-          <i class="fas fa-phone"></i> <strong>Phone/WhatsApp:</strong> +91-7204517831<br />
+          <i class="fas fa-envelope"></i> <strong>Email:</strong> info@amritprada.com<br>
+          <i class="fas fa-phone"></i> <strong>Phone/WhatsApp:</strong> +91-7204517831<br>
           <i class="fas fa-clock"></i> <strong>Response Time:</strong> Within 24 hours
         </p>
 
@@ -300,37 +400,43 @@
 
   <!-- Footer -->
   <footer>
-    <div class="container cols" style="display:flex; flex-wrap: wrap; justify-content: space-between; padding:20px 0;">
-      <div style="flex:1; min-width:200px;">
+    <div class="container cols">
+      <div>
         <strong>Amritprada Exports Pvt. Ltd.</strong><br />
-        Trusted Global Partner for Surgical & Medical Disposables<br /><br />
+        Trusted Global Partner for Surgical & Medical Disposables<br><br>
         <i class="fas fa-map-marker-alt"></i> Registered in India<br />
         <i class="fas fa-globe"></i> Exporting Worldwide
       </div>
-      <div style="flex:1; min-width:200px;">
+      <div>
         <strong>Quick Links</strong><br>
         <div><a href="#home">Home</a></div>
         <div><a href="#products">Products</a></div>
         <div><a href="#about">About</a></div>
         <div><a href="#contact">Contact</a></div>
       </div>
-      <div style="flex:1; min-width:200px;">
+      <div>
         <strong>Contact Info</strong><br>
-        <i class="fas fa-envelope"></i> info@amritprada.com<br />
-        <i class="fas fa-phone"></i> +91-7204517831<br />
+        <i class="fas fa-envelope"></i> info@amritprada.com<br>
+        <i class="fas fa-phone"></i> +91-7204517831<br>
         <i class="fab fa-whatsapp"></i> +91-7204517831
       </div>
     </div>
-    <div style="text-align:center; padding:10px 0; border-top:1px solid #e5e7eb; margin-top:20px;">
-      © 2026 Amritprada Exports Pvt. Ltd. — All Rights Reserved<br />
+    <div class="footer-bottom">
+      © 2026 Amritprada Exports Pvt. Ltd. — All Rights Reserved<br>
       ISO 13485 | ISO 9001 | GMP/WHO-GMP | CE Certified | CDSCO India
     </div>
   </footer>
 
   <!-- WhatsApp Float -->
-  <a href="https://wa.me/7204517831?text=Hi%20Amritprada%20Exports,%20I%20would%20like%20to%20inquire%20about%20your%20products." target="_blank" class="whatsapp-float" style="position:fixed; bottom:20px; right:20px; background:#25D366; color:#fff; border-radius:50%; padding:15px; font-size:24px; z-index:1000; box-shadow:0 4px 8px rgba(0,0,0,0.2);">
+  <a href="https://wa.me/7204517831?text=Hi%20Amritprada%20Exports,%20I%20would%20like%20to%20inquire%20about%20your%20products." target="_blank" class="whatsapp-float">
     <i class="fab fa-whatsapp"></i>
   </a>
+
+  <!-- Watermark -->
+  <div class="watermark">
+    <img src="COMPANY_LOGO-WITH TAGLINE.png" alt="Watermark Logo" />
+    <span>Your Trusted Partner</span>
+  </div>
 
   <script>
     // Mobile menu toggle
@@ -357,6 +463,21 @@
       } else {
         document.querySelector('nav').style.display = 'none';
       }
+    });
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        if(targetId === '#') return;
+        const targetElement = document.querySelector(targetId);
+        if(targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
     });
     // Image fallback system
     document.addEventListener('DOMContentLoaded', function() {
